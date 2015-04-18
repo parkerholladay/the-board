@@ -1,0 +1,17 @@
+{
+  "name": "TheBoard",
+  "version": "1.0.0",
+  "description": "The Board",
+  "main": "server.js",
+  "author": {
+    "name": "Parker Holladay",
+    "email": "admin@holladay.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parker_holladay/the-board"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
