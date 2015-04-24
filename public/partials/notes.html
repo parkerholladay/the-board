@@ -1,0 +1,52 @@
+﻿<div class="page-header">
+    <h1>{{title}}</h1>
+    <a href="/" class="btn btn-info">Back</a>
+</div>
+<div class="row form-horizontal form-group">
+    <label class="control-label col-lg-1">Filter</label>
+    <div class="col-lg-4">
+        <input ng-model="search" placeholder="Filter notes by content or author" class="form-control" />
+    </div>
+</div>
+<div class="note" ng-repeat="note in notes | filter:search" ng-class="'note-' + note.color">
+    <div>{{note.note}}</div>
+    <div class="note-author"><small>- {{note.author}}</small></div>
+</div>
+
+<hr />
+<h3>New Note</h3>
+
+<p class="text-danger ng-hide" ng-bind="newNoteError" ng-show="newNoteError"></p>
+<form role="form" class="form-horizontal" name="newNoteForm" ng-submit="save()">
+    <div class="form-group">
+        <label class="control-label col-lg-1">Color</label>
+        <div class="col-lg-8">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" ng-model="newNote.color" btn-radio="'yellow'">Yellow</button>
+                <button type="button" class="btn btn-primary" ng-model="newNote.color" btn-radio="'blue'">Blue</button>
+                <button type="button" class="btn btn-primary" ng-model="newNote.color" btn-radio="'green'">Green</button>
+                <button type="button" class="btn btn-primary" ng-model="newNote.color" btn-radio="'orange'">Orange</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-lg-1">Content</label>
+        <div class="col-lg-5">
+            <textarea cols="30" rows="2" name="note" ng-model="newNote.note" placeholder="Your Note" class="form-control" required maxlength="150"></textarea>
+        </div>
+        <p>{{150 - newNote.note.length}} / 150</p>
+        <p class="text-warning" ng-show="newNoteForm.note.$error.required">Content is required</p>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-lg-1">Author</label>
+        <div class="col-lg-5">
+            <input name="author" ng-model="newNote.author" placeholder="Your Name" class="form-control" required />
+        </div>
+        <p class="text-warning" ng-show="newNoteForm.author.$error.required">Author is required</p>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-1 col-lg-6">
+            <input type="submit" value="Save Note" class="btn btn-primary" ng-disabled="newNoteForm.$invalid" />
+        </div>
+    </div>
+</form>

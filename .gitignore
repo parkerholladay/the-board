@@ -2,6 +2,8 @@
 logs
 *.log
 
+public/lib/
+
 # jetbrains
 .idea/
 

@@ -1,9 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <title>The Board</title>
+        <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="/css/site.css" rel="stylesheet" />
     </head>
-    <body>
-        <h1>Up!</h1>
+    <body ng-app="theBoard">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <div id="logo">
+                        <a href='/'><h4>The Board</h4></a>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav">
+                            <a href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section id="body" class="container" ng-view></section>
+
+        <hr />
+
+        <footer class="container">
+            <p>The Board</p>
+        </footer>
+
+        <script src="/lib/angular/angular.js"></script>
+        <script src="/lib/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="/lib/angular-route/angular-route.js"></script>
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/js/categoriesView.js"></script>
+        <script src="/js/notesView.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>
