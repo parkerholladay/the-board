@@ -7,7 +7,10 @@
 
         app.get('/api/notes', notes.getCategories);
         app.post('/api/notes', notes.saveCategory);
-        app.get('/api/notes/all', notes.getNotes);
+        app.delete('/api/notes/:category', notes.deleteCategory);
+        app.get('/api/notes/:category', notes.getNotes);
+        app.post('/api/notes/:category', notes.saveNote);
+        app.delete('/api/notes/:category/:note', notes.deleteNote);
 
         app.get('*', index);
 

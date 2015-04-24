@@ -4,7 +4,7 @@ var http = require('http'),
     app = express(),
     routes = require('./routes');
 
-app.use(bodyParser.urlencoded({ extended:false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 routes.init(app);
