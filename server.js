@@ -1,7 +1,11 @@
 var http = require('http'),
     express = require('express'),
+    bodyParser = require('body-parser');
     app = express(),
     routes = require('./routes');
+
+app.use(bodyParser.urlencoded({ extended:false }));
+app.use(bodyParser.json());
 
 routes.init(app);
 

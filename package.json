@@ -12,6 +12,8 @@
     "url": "https://github.com/parker_holladay/the-board"
   },
   "dependencies": {
+    "body-parser": "^1.12.3",
+    "cassandra-driver": "^2.0.1",
     "express": "^4.12.3"
   },
   "devDependencies": {
