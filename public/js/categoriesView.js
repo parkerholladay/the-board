@@ -8,7 +8,7 @@
             $scope.newCategory = getBlankCategory();
             $scope.newCategoryError = '';
 
-            var categoryUrl = '/api/notes';
+            var categoryUrl = '/api/categories';
 
             $http.get(categoryUrl).then(function(res) {
                 $scope.categories = res.data;
@@ -21,7 +21,7 @@
                 $scope.newCategoryError = '';
                 $http.post(categoryUrl, $scope.newCategory)
                     .then(function(res) {
-                        $window.location.href = '/' + res.data.category_id;
+                        $window.location.href += '/' + res.data.id;
                     }, function(err) {
                         $scope.newCategoryError = err.data;
                     });
@@ -30,7 +30,7 @@
     ]);
 
     function getBlankCategory() {
-        return { display_name: '' };
+        return { name: '' };
     }
 
 })(window.angular);

@@ -4,12 +4,12 @@
 <div class="row form-horizontal form-group">
     <label class="control-label col-lg-1">Filter</label>
     <div class="col-lg-4">
-        <input ng-model="search.name" placeholder="Filter categories" class="form-control" />
+        <input ng-model="search.display_name" placeholder="Filter categories" class="form-control" />
     </div>
 </div>
 <div class="row">
     <div class="list-group col-lg-6">
-        <a ng-repeat="category in categories | filter: search" href="{{'#/notes/' + category.category_id}}" class="list-group-item list-group-item-info"><span class="badge">{{category.notes ? category.notes.length : 0}}</span>{{category.display_name}}</a>
+        <a ng-repeat="category in categories | filter: search" href="{{'#/notes/' + category.id}}" class="list-group-item list-group-item-info"><span class="badge">{{category.notes ? category.notes.length : 0}}</span>{{category.name}}</a>
     </div>
 </div>
 

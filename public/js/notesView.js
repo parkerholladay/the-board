@@ -8,9 +8,9 @@
             $scope.newNote = getBlankNote();
             $scope.newNoteError = '';
 
-            var urlParts = $window.location.hash.split('/');
-            var category = urlParts[urlParts.length - 1];
-            var notesUrl = '/api/notes/' + category;
+            var urlParts = $window.location.hash.split('/'),
+                category = urlParts[urlParts.length - 1],
+                notesUrl = '/api/notes/' + category;
 
             $http.get(notesUrl)
                 .then(function(res) {
@@ -34,7 +34,7 @@
     ]);
 
     function getBlankNote() {
-        return { note: '', color: 'yellow', author: '' };
+        return { note: '', author: '', color: 'yellow' };
     };
 
 })(window.angular);
